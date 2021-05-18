@@ -58,7 +58,7 @@ ORDER BY
 ```
 
 
-# List all tables with a relationship  
+## List all tables with a relationship  
 
 ```
 -- select related tables
