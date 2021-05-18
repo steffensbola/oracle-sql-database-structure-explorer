@@ -1,10 +1,16 @@
 # oracle-sql-database-structure-explorer  
 Code snippets to find constraints and table relationships in an Oracle database.  
 
-
-## List all tables in the database  
+## Make the current session case-insensitive
 ```
--- list all tables in the database
+-- make the current session case-insensitive (in case your tables or columns have FancyNamesLikeThis)
+alter session set nls_sort=BINARY_CI;
+alter session set nls_comp=LINGUISTIC;
+```
+
+## List all tables in the database accessible by the current user  
+```
+-- list all tables in the database accessible by the current user
 SELECT
        owner
      , table_name
@@ -78,8 +84,23 @@ WHERE
        P.constraint_name     = F.r_constraint_name
        AND f.constraint_name = C.constraint_name
        AND F.table_name      = C.table_name
-       AND p.table_name IN UPPER(('epagbaseconsignacao'))
+       AND p.table_name IN UPPER(('TABLE_NAME_GOES_HERE'))
 ;
 ```
 
--- 
+
+## List all schema objects
+
+```
+-- list Schema Objects
+SELECT 
+  object_type
+  , object_name 
+  , status  
+FROM user_objects
+ORDER BY 
+  object_type
+  , object_name
+;
+```
+
