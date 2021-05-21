@@ -115,6 +115,6 @@ SELECT
 	LISTAGG(nullable || '_' || data_type, ', ') WITHIN GROUP (ORDER BY column_name ) ||
 	');' as insert_command
 FROM user_tab_columns
-WHERE table_name = upper('earqlayout');
+WHERE table_name = upper('TABLE_NAME_GOES_HERE');
 ```   
 
