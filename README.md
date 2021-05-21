@@ -104,3 +104,17 @@ ORDER BY
 ;
 ```
 
+## Generate insert script from table structure  
+
+``` 
+-- generate insert script
+SELECT 
+	'insert into (' ||
+	LISTAGG(column_name, ', ') WITHIN GROUP (ORDER BY column_name ) ||
+	') values (' ||
+	LISTAGG(nullable || '_' || data_type, ', ') WITHIN GROUP (ORDER BY column_name ) ||
+	');' as insert_command
+FROM user_tab_columns
+WHERE table_name = upper('earqlayout');
+```   
+
