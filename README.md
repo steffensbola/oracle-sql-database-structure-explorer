@@ -110,11 +110,13 @@ ORDER BY
 -- generate insert script
 SELECT 
 	'insert into (' ||
+	user_tab_columns.table_name ||
 	LISTAGG(column_name, ', ') WITHIN GROUP (ORDER BY column_name ) ||
 	') values (' ||
 	LISTAGG(nullable || '_' || data_type, ', ') WITHIN GROUP (ORDER BY column_name ) ||
 	');' as insert_command
 FROM user_tab_columns
-WHERE table_name = upper('TABLE_NAME_GOES_HERE');
+WHERE table_name = upper('TABLE_NAME_GOES_HERE')
+GROUP BY table_name;
 ```   
 
