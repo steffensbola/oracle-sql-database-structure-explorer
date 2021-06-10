@@ -49,5 +49,16 @@ Now, when you are using the editor, enter a few characters and the tool will sug
 Go to **Preferences** –> **User Interface** –> **Key configuration**.  
 Find **Edit / Selection / Comment** and set the key combination you want to use.  
 
+## Connect faster with saved passwords  
+Go to **Preferences** –> **Oracle** –> **Logon History**.  
+Set **Store History** and **Store with password** to `true`.  
+In the **Fixed Users** field insert your connections, one for each line, in the following format:  
+```
+user1/password1@database1
+user2/password2@database2
+```  
+
+
+
 # Note
 These tips where inspired by a blog post from [Alibaba Cloud](https://topic.alibabacloud.com/a/plsql-developer-usage-tips-shortcut-keys_8_8_30066914.html).  
