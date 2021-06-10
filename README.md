@@ -124,7 +124,7 @@ GROUP BY table_name;
 ## Find field usage in procedures, functions, views...
 
 ``` 
--- generate insert script
+-- Find field usage in procedures, functions, views...
 SELECT DISTINCT
 	a.type, a.name, a.owner, a.text
 FROM all_source a -- or --FROM dba_source
