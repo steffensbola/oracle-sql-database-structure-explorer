@@ -125,16 +125,16 @@ GROUP BY table_name;
 
 ``` 
 -- generate insert script
-select distinct  
-a.type, a.name, a.owner, a.text
-from all_source a -- or --FROM dba_source
-where
-a.type in ('PROCEDURE','FUNCTION','PACKAGE BODY', 'TRIGGER', 'VIEW') -- types
---and 
---a.owner = 'SCHEMA_NAME' -- schema
-and 
-a.text like '%TABEL_NAME%' -- table name
-and 
-text like '%FIELD_NAME%' -- field name
-order by a.name, a.type;
+SELECT DISTINCT
+	a.type, a.name, a.owner, a.text
+FROM all_source a -- or --FROM dba_source
+WHERE
+	a.type IN ('PROCEDURE','FUNCTION','PACKAGE BODY', 'TRIGGER', 'VIEW') -- types
+	--and 
+	--a.owner = 'SCHEMA_NAME' -- schema
+	AND 
+	a.text LIKE '%TABEL_NAME%' -- table name
+	AND 
+	text LIKE '%FIELD_NAME%' -- field name
+ORDER BY a.name, a.type;
 ```   
