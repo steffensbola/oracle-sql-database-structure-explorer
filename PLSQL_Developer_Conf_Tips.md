@@ -46,10 +46,12 @@ Go to Preferences->Code Assistant (assistant) and set **Automatically Activated*
 Now, when you are using the editor, enter a few characters and the tool will suggest the database objects.  
   
 ## Toogle Comment  
+  
 Go to **Preferences** –> **User Interface** –> **Key configuration**.  
 Find **Edit / Selection / Comment** and set the key combination you want to use.  
 
 ## Connect faster with saved passwords  
+  
 Go to **Preferences** –> **Oracle** –> **Logon History**.  
 Set **Store History** and **Store with password** to `true`.  
 In the **Fixed Users** field insert your connections, one for each line, in the following format:  
@@ -58,6 +60,18 @@ user1/password1@database1
 user2/password2@database2
 ```  
 
+## Commit  
+  
+By default DML statements (INSERT/DELETE/UPDATE/MERGE) don't do an auto commit in PL/SQL.  
+DDL statements do commit (ALTER/CREATE etc) and this will happen even if something failed.  
+
+To change the autocommit behavior for DML statements to **Preferences** –> **Window Types** –> **SQL Window**.  
+Set **AutoCommit SQL** to `true`. 
+
+## Show line numbers  
+  
+Go to **Preferences** –> **Window Types** –> **SQL Window**.   
+Set **Show Gutter** to `true`.  
 
 
 # Note
