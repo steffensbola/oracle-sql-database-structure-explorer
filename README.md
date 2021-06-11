@@ -70,6 +70,7 @@ ORDER BY
 -- select related tables
 SELECT
        p.table_name
+     , c.table_name
      , c.column_name
      , 'Select count(*) from '
               || F.table_name
