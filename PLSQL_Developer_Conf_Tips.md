@@ -7,16 +7,16 @@ PL/SQL Developer by Allround Automations is an IDE that is specifically targeted
 Go to **Preferences** –> **Editor** –> **AutoReplace (auto-replace)** –> **Edit**
 Add the following, one shortcut per line:
 ```
-S=SELECT * FROM TABLE_NAME WHERE FIELD_NAME = ;
-I=INSERT INTO TABLE_NAME values ( , , );
-U=UPDATE TABLE_NAME set FIELD_NAME =  WHERE FIELD_NAME = ;
+S=SELECT * FROM e_nome_entidade WHERE column_name = ;
+I=INSERT INTO e_nome_entidade values ( , , );
+U=UPDATE e_nome_entidade set column_name =  WHERE column_name = ;
 F=FROM
 W=WHERE
 O=ORDER BY
 D=DELETE
 DF=DELETE FROM
-SF=select * FROM
-SC=SELECT COUNT (*) from TABLE_NAME;
+SF=SELECT * FROM
+SC=SELECT COUNT (*) FROM e_nome_entidade;
 SFU=SELECT * FROM FOR UPDATE
 COR=CREATE OR REPLACE
 P=PROCEDURE
@@ -24,10 +24,12 @@ FN=FUNCTION
 T=TRIGGER
 V=VIEW
 SSO=SET serveroutput on;
-CT=CREATE TABLE E_NOME_ENTIDADE (CD_CHAVE_PRIMARIA  NUMBER NOT NULL, CD_CHAVE_ESTRANGEIRA NUMBER, DTULTALTERACAO  TIMESTAMP(6));
-CPK=ALTER TABLE E_NOME_ENTIDADE  ADD CONSTRAINT PKE_NOME_ENTIDADE PRIMARY KEY (CD_CHAVE_PRIMARIA);
-CFK=ALTER TABLE E_NOME_ENTIDADE  ADD CONSTRAINT FKE_NOME_ENTIDADE_E_NOME_ASSOCIADA FOREIGN KEY (CD_CHAVE_ESTRANGEIRA) REFERENCES E_NOME_TABELA_RELACIONADA (CD_CHAVE_ESTRANGEIRA);
-CS=CREATE SEQUENCE S_NOME_ENTIDADE;
+CT=CREATE TABLE e_nome_entidade (cd_chave_primaria  NUMBER NOT NULL, cd_chave_estrangeira NUMBER, dtultalteracao  TIMESTAMP(6));
+CPK=ALTER TABLE e_nome_entidade  ADD CONSTRAINT pke_nome_entidade PRIMARY KEY (cd_chave_primaria);
+CFK=ALTER TABLE e_nome_entidade  ADD CONSTRAINT fke_nome_entidade_nome_associada FOREIGN KEY (cd_chave_estrangeira) REFERENCES E_NOME_TABELA_RELACIONADA (cd_chave_estrangeira);
+CS=CREATE SEQUENCE s_nome_entidade;
+GS=GRANT SELECT ON schema_name.sequence_name_or_table TO user_or_role_name;
+GA=GRANT ALL PRIVILEGES on schema_name.sequence_name_or_table to user_or_role_name;
 
 ```
 
