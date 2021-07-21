@@ -139,3 +139,11 @@ WHERE
 	text LIKE '%FIELD_NAME%' -- field name
 ORDER BY a.name, a.type;
 ```   
+
+## Find all constraints on table  
+```
+SELECT *
+  FROM user_constraints natural join user_cons_columns
+ WHERE table_name = UPPER('e_table_name');
+ 
+```
